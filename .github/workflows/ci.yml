@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        container: [1, 2, 3]
+    steps:
+      - run: |
+          echo "repository: ${{ github.repository }}"
+          echo "run_id: ${{ github.run_id }}"
+          echo "job: ${{ github.job }}"
