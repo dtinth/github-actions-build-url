@@ -14,6 +14,7 @@ jobs:
         container: [1, 2, 3]
     steps:
       - run: |
-          echo "repository: ${{ github.repository }}"
-          echo "run_id: ${{ github.run_id }}"
-          echo "job: ${{ github.job }}"
+          echo "github.repository: ${{ github.repository }}"
+          echo "github.run_id: ${{ github.run_id }}"
+          echo "github.job: ${{ github.job }}"
+          echo "job.container.id: ${{ job.container.id }}"
