@@ -18,6 +18,7 @@ jobs:
           JOB_CONTEXT: ${{ toJSON(job) }}
         run: echo "$JOB_CONTEXT"
       - run: |
+          echo "URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           echo "github.repository: ${{ github.repository }}"
           echo "github.run_id: ${{ github.run_id }}"
           echo "github.job: ${{ github.job }}"
